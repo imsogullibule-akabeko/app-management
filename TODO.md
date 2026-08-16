@@ -18,6 +18,7 @@
 - [ ] 候補アプリの絞り込み
 
 ## 3. AISアプリ作成
+- [x] プロジェクトフォルダ作成(`AISアプリ/`、android_app_templateから初期化、package: net.jp.apps.okabe.aisviewer)
 - [ ] 要件整理(船舶知識を活かせる機能の洗い出し)
 - [ ] AISデータソース(API/プロバイダ)の選定・コスト確認
 - [ ] MVP仕様策定
@@ -41,4 +42,12 @@
 - GDPR/UMP SDK: EEA向け広告配信はGoogle認定CMP(UMP SDK)必須、IAB TCF準拠。Mobile Ads SDKはAndroid 22.5.0+ / iOS 10.8.0+が必要。同意撤回導線も必須。
 - 候補アプリ案(未確定): ①クイズ/トリビアの独仏ローカライズ新規企画(既存クイズアプリのノウハウ活用) ②条件特化型ヘルスケア習慣管理 ③シニア向け健康アプリ ④コレクター向け管理ツール
 - 既存アプリはローカライズ対象なし(ユーザー方針: ゼロから新規企画で検討)
+
+### 3. AISアプリ プロジェクト初期化メモ (2026-08-16)
+- `/Users/okabe/副業/アプリ制作/AISアプリ/` を作成。android_app_template(Kotlin/Compose/Hilt/Room、単一モジュール、買い切り課金雛形)をコピーしてリネーム。
+- package: net.jp.apps.okabe.aisviewer / 表示名: AIS Viewer(英)・AISビューワー(日)。他の自作アプリ(boatpilotsim, sinkansen等)と同じ net.jp.apps.okabe.* 命名規則に統一。
+- 注意: コピー元の android_app_template は本来 `com.template.app` のプレースホルダーのはずが、実際は `com.oka.licensync`(LicenSyncプロジェクトの残骸)のままになっていた。rename_app.py はプレースホルダー文字列を前提にするため置換が効かず、手動でパッケージ移動・置換を実施。**要フォローアップ: android_app_template自体をプレースホルダー状態にリセットしておかないと、次に別アプリを量産するときも同じ問題が起きる。**
+- ついでに `.gitignore` の `/build` (ルート直下のみ対象)が `app/build/` の生成物を除外できていない不備を発見・このプロジェクトでは `build/` に修正済み。テンプレート側にも同じ不備がある可能性。
+- `./gradlew assembleDebug` でビルド成功を確認済み。git init・初回コミット済み(ローカルのみ、リモート未設定)。
+- 次: 要件整理(船舶知識を活かせる機能の洗い出し)から着手。
 
