@@ -49,6 +49,7 @@
 - **方針決定・候補絞り込み結果(2026-08-16)**: 新規アプリ企画で「ADHD向け習慣管理アプリ」に決定。理由: 独仏含むEUでADHD診断率が上昇傾向、医療的効能訴求さえ避ければ(=診断・治療ではなくライフスタイル/生産性アプリとして設計)規制リスクは他の健康系ニッチ(慢性痛・術後回復)より低いと判断。
 - プロジェクト: `/Users/okabe/副業/アプリ制作/ADHDHabits/` を作成。android_app_templateをコピーして手動リネーム(package: net.jp.apps.okabe.adhdhabits、表示名: ADHD Habits(英)/ ADHS Gewohnheiten(独))。AISアプリ作成時と同様、コピー元テンプレートが`com.oka.licensync`のまま汚染されていたため手動でパッケージ移動・置換、`.gitignore`の`app/build/`除外漏れも同様に修正。`./gradlew assembleDebug`成功、git init・初回コミット済み(ローカルのみ)。
 - **要フォローアップ(未着手)**: 医療周辺の表現規制確認(EU MDR — 診断・治療を謳うと医療機器扱いになるリスク)、要件整理・MVP仕様策定、フランス語名称(現状 英/独のみ設定、仏語未設定)。
+- 引き継ぎ用メモを `ADHDHabits/docs/handoff.md` に作成済み(現状・既知の注意点・次のステップをまとめた版)。次回セッション(新規codeで開始する際)はまずそちらを参照。
 
 ### 3. AISアプリ プロジェクト初期化メモ (2026-08-16)
 - `/Users/okabe/副業/アプリ制作/AISアプリ/` を作成。android_app_template(Kotlin/Compose/Hilt/Room、単一モジュール、買い切り課金雛形)をコピーしてリネーム。
